@@ -60,8 +60,8 @@ function sonIguales(x, y) {
   // Devuelve "true" si "x" e "y" son iguales
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (x = y) {
-  return true;}
+  if (x == y) {
+  return true; }
   else return false;
 }
 
@@ -69,8 +69,8 @@ function tienenMismaLongitud(str1, str2) {
   // Devuelve "true" si las dos strings tienen la misma longitud
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (str1 == str2) {
-    return true; } 
+  if (str1.lenght == str2.lenght) {
+    return true;} 
     else return false; 
   }
 
@@ -104,7 +104,8 @@ function esPar(num) {
   // Devuelve "true" si "num" es par
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (num = espar) { return true;
+  if (num = esPar) { 
+    return true;
   } else return false; 
 }
 
@@ -112,7 +113,8 @@ function esImpar(num) {
   // Devuelve "true" si "num" es impar
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (num = esImpar) { return true;
+  if (num = esImpar) { 
+    return true;
   } else return false;
 }
 
@@ -120,19 +122,19 @@ function elevarAlCuadrado(num) {
   // Devuelve el valor de "num" elevado al cuadrado
   // ojo: No es raiz cuadrada!
   // Tu código:
-  return Math.pow( num, 2);
+  return Math.pow(num, 2);
 }
 
 function elevarAlCubo(num) {
   // Devuelve el valor de "num" elevado al cubo
   // Tu código:
-  return Math.pow ( num, 3);
+  return Math.pow (num, 3);
 }
 
 function elevar(num, exponent) {
   // Devuelve el valor de "num" elevado al exponente dado en "exponent"
   // Tu código:
-  return Math.pow ( num, exponent);
+  return Math.pow (num, exponent);
 }
 
 function redondearNumero(num) {
@@ -147,10 +149,10 @@ function redondearHaciaArriba(num) {
   return Math.ceil (num)
 }
 
-function numeroRandom (0, 9) {
+function numeroRandom () {
   //Generar un número al azar entre 0 y 1 y devolverlo
   //Pista: investigá qué hace el método Math.random()
-  return Math.random (0,9);
+  return Math.random ();
 }
 
 function esPositivo(numero) {
@@ -164,27 +166,28 @@ function esPositivo(numero) {
 function agregarSimboloExclamacion(str) {
   // Agrega un símbolo de exclamación al final de la string "str" y devuelve una nueva string
   // Ejemplo: "hello world" pasaría a ser "hello world!"
-  // Tu código:
+  // Tu código: 
+  return "str" +"!";
 }
 
 function combinarNombres(nombre, apellido) {
   // Devuelve "nombre" y "apellido" combinados en una string y separados por un espacio.
   // Ejemplo: "Soy", "Henry" -> "Soy Henry"
   // Tu código:
-  
+  return  ('nombre  +  apellido'); 
 }
 
 function obtenerSaludo(nombre) {
   // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
   // "Martin" -> "Hola Martin!"
   // Tu código:
-  
+  return 'hola' + nombre +'!'
 }
 
 function obtenerAreaRectangulo(alto, ancho) {
   // Retornar el area de un rectángulo teniendo su altura y ancho
   // Tu código:
-  
+  return alto*ancho;
 }
 
 
