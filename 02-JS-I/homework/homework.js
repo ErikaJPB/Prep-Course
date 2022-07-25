@@ -65,14 +65,15 @@ function sonIguales(x, y) {
   else return false;
 }
 
-function tienenMismaLongitud(str1, str2) {
+function tienenMismaLongitud( str1, str2) {
   // Devuelve "true" si las dos strings tienen la misma longitud
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (str1.lenght == str2.lenght) {
-    return true;} 
-    else return false; 
-  }
+  if (str1.lenght  ===  str2.lenght){
+    return true; }
+    else {
+   return false; }
+   }
 
 
 function menosQueNoventa(num) {
@@ -104,17 +105,17 @@ function esPar(num) {
   // Devuelve "true" si "num" es par
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (num = esPar) { 
-    return true;
-  } else return false; 
+  if (num % 2 == 0) { 
+  return true;  
+  } else return false;
 }
 
 function esImpar(num) {
   // Devuelve "true" si "num" es impar
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (num = esImpar) { 
-    return true;
+  if (num % 3 == 1) { 
+  return true;
   } else return false;
 }
 
@@ -167,7 +168,7 @@ function agregarSimboloExclamacion(str) {
   // Agrega un símbolo de exclamación al final de la string "str" y devuelve una nueva string
   // Ejemplo: "hello world" pasaría a ser "hello world!"
   // Tu código: 
-  return "str" +"!";
+  console.log (str +"!") ;
 }
 
 function combinarNombres(nombre, apellido) {
@@ -181,7 +182,7 @@ function obtenerSaludo(nombre) {
   // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
   // "Martin" -> "Hola Martin!"
   // Tu código:
-  return 'hola' + nombre +'!'
+  return 'hola' + nombre + '!';
 }
 
 function obtenerAreaRectangulo(alto, ancho) {
