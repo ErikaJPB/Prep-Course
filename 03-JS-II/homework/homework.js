@@ -80,19 +80,20 @@ function colors(color) {
   //En caso que el color recibido sea "orange", devuleve --> "This is orange"
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
+  // Nota:El break se tendría que usar si no estuviera el "return"
   switch (color) {
     case 'blue':
       return"This is blue";
-      break;
+      
       case 'red':
         return"This is red";
-        break;
+      
         case 'green':
           return"This is green";
-          break;
+          
           case 'orange':
             return"This is orange";
-            break;
+           
               default: 
                 return"Color not found";
   }
@@ -128,6 +129,13 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código: 
+
+ /*  function esEntero(numero) {
+    if (Number.isInteger(numero)) {
+    return true;
+    } return false;
+    }  */
+
 if (numero === Math.floor(numero)){
     return true;
   } else 
@@ -178,7 +186,16 @@ function esPrimo(numero) {
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
-if (numero < 2) 
+  
+  // if (numero === 0 || numero === 1){ 
+  // return false;}
+  // for (var i = 2; i < numero; i++){
+  //if (numero % i === 0) {
+ // return false;
+ // } else {return true;  
+// } 
+
+  if (numero < 2) 
   return false;
     if (numero === 2) 
       return true;
@@ -193,7 +210,7 @@ function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-if (valor) {
+if (valor === true) {
  return 'Soy verdadero'; }
  else  
  return 'Soy falso'
@@ -203,32 +220,60 @@ function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí
-  const tablaDelSeis = []; 
+ /*  const tablaDelSeis = []; 
     for (var i = 0; i <= 10; i++){
       tablaDelSeis [i] = i * 6;
     }
       return tablaDelSeis;
-        }
+        } */
+        
+    var array = [];
+    for (var i = 0; i <= 10;  i++){
+      var producto = (6*i);
+      array.push(producto);
+    }
+    return array;
+    }
+  
+
 
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí 
-  if (numero.toString().length === 3) {
+  /* if (numero.toString().length === 3) {
     return true;
   }
       else return false; 
+} */
+var string = numero.toString();
+var digitos = string.length;
+if (digitos === 3) {
+  return true;
+} else {
+  return false;
+}
 }
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while. 
-  let valor=0
+ /*  let valor = 0;
   do { numero = numero +5;
   valor++;
 } while (valor < 8) {
   return numero;
 }
+} */
+var acc = numero;
+var aux = 1;
+
+do{ 
+  acc = acc + 5;
+  aux = aux + 1;
+
+} while (aux < 9)
+return acc;
 }
 
 
