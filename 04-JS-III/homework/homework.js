@@ -134,7 +134,8 @@ function multiplicarArgumentos() {
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
-
+// arreglo [20,9,19,7] = 2
+// cantidad = 2 en este ejemplo
 var cantidad = 0;
 
 for (var i = 0; i < arreglo.length; i++){
@@ -174,11 +175,18 @@ function empiezaConNueve(n) {
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
   
-  var string = n + ''
+ /*  var string = n + ''
 
-  if (string[0] === '9') return true;
-  return false;
+  if (string[0] === '9') { 
+    return true;
+  }
+    else return false; */
 
+    let numero = n.toString()
+    if (numero[0] === '9') {
+      return true
+    }
+return false
 }
 
 
@@ -186,16 +194,24 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  var aux = arreglo[0];
+ /*  var aux = arreglo[0];
 
   for (var i = 0; i < arreglo.length; i++) {
 
-    if (arreglo[i] !== aux) 
+    if (arreglo[i] !== aux) {
 
     return false;
+    }
   }
 return true;
-} 
+}  */
+for (let i = 0; i < arreglo.length; i++){
+if (arreglo[i] === arreglo [i+1]) {
+  return true;
+}
+}
+return false;
+}
 
 
 function mesesDelAño(array) {
@@ -217,7 +233,9 @@ var miArray = [];
 
  }
 
-      if (miArray.length !== 3) return 'No se encontraron los meses pedidos';
+      if (miArray.length !== 3){
+         return 'No se encontraron los meses pedidos';
+      }
       return miArray;
 
 }
@@ -251,18 +269,18 @@ function breakStatement(numero) {
 
   var miArray = [];
   
-  var acc = numero;
+  var suma = numero;
   
   var aux = 1;
  
   for (var i = 1; i <= 10; i++) {
-    acc = acc + 2;
+    suma = suma + 2;
 
-    if (acc === aux){break;}
+    if (suma === aux){break;}
     aux = aux + 1;
-    miArray.push(acc)
+    miArray.push(suma)
   }
-  if (acc === aux) return 'Se interrumpió la ejecución';
+  if (suma === aux) return 'Se interrumpió la ejecución';
 
   return miArray;
 
@@ -278,15 +296,15 @@ function continueStatement(numero) {
   // Tu código:
 
   var miArray = [];
-  var acc = numero;
+  var suma = numero;
   
   for (var i = 1; i <= 10; i++){
 
     if (i === 5) { continue; }
 
-    acc = acc + 2;
+    suma = suma + 2;
 
-    miArray.push(acc); 
+    miArray.push(suma); 
 
   }
   return miArray;
