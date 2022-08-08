@@ -1,5 +1,7 @@
 // No cambies los nombres de las funciones.
 
+const { EMPTY_COMMANDS } = require("simple-git/src/lib/tasks/task");
+
 function crearGato (nombre, edad) {
   // Crear un nuevo objeto con la propiedad "nombre" y el valor definido como el argumento "nombre".
   // Agrega una propiedad al objeto con el nombre "edad" y usa el valor definido en el argumento "edad"
@@ -25,6 +27,10 @@ function agregarPropiedad (objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
+
+  // NOTA: dot notation se usa en este caso si la propiedad ya estuviera definida
+  // pero como property va a tomar otros valores porque no se ha definido se debe usar la bracket notation.
+
 objeto[property] = null
 return objeto;
 }
@@ -45,7 +51,6 @@ function multiplicarNumeroDesconocidoPorCinco (objetoMisterioso) {
 var producto = objetoMisterioso.numeroMisterioso*5;
 return producto;
 
-
 }
 
 
@@ -64,6 +69,7 @@ function nuevoUsuario (nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
+  Nota: /*Si el nombre de la propiedad es el mismo que el argumento se puede obviar y poner solo con una coma*/
   nuevoUsuario = {
     nombre: nombre,
     email: email,
@@ -72,6 +78,7 @@ function nuevoUsuario (nombre, email, password) {
 return nuevoUsuario;
 }
 
+
 function tieneEmail (usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
@@ -79,10 +86,19 @@ function tieneEmail (usuario) {
 /* const usuario = {
   email: email,
 } */
-  if (usuario['email']){
+
+ /*  if (usuario.email){
   return true};
   return false;
+} */
+
+if (usuario["email"]) {
+  return true; }
+  return false;
+
 }
+
+
 
 function tienePropiedad (objeto, propiedad) {
   // Devuelve "true" si el objeto (parámetro "objeto") tiene una propiedad (key) cuyo nombre es igual al valor del argumento "propiedad"
@@ -103,11 +119,15 @@ function verificarPassword (usuario, password) {
   // De lo contrario, devuelve "false"
   // Tu código:
 
-  if (usuario['password'] === password) {
+  /* if (usuario['password'] === password) {
     return true;
   } 
     return false;
+} */
 
+if (usuario.password === password) {
+  return true;
+} return false;
 }
 
 function actualizarPassword (usuario, nuevaPassword) {
@@ -115,9 +135,13 @@ function actualizarPassword (usuario, nuevaPassword) {
   // Devuelve el objeto
   // Tu código:
 
-  usuario['password'] = nuevaPassword;
+ /*  usuario['password'] = nuevaPassword;
   return usuario;
-}  
+}   */
+
+ usuario.password = nuevaPassword;
+ return usuario;
+}
 
 function agregarAmigo (usuario, nuevoAmigo) {
   // "usuario" tiene una propiedad llamada "amigos" que es un array
@@ -136,7 +160,6 @@ function pasarUsuarioAPremium (usuarios) {
   // Devuelve el array de usuarios
   // Tu código:
 
-  
    /* /*  usuarios = [
     usuario 1 = {
       esPremium: true
@@ -151,7 +174,6 @@ function pasarUsuarioAPremium (usuarios) {
     }
    ]
    */
-
 
 for (let usuario in usuarios) {
   usuarios[usuario].esPremium = true;
@@ -168,14 +190,22 @@ function sumarLikesDeUsuario (usuario) {
   // Devuelve la suma
   // Tu código:
 
-  var suma = 0;
+  /* var suma = 0;
+  for (let i = 0; i < usuario.posts.length; i++) {
+    suma = suma + usuario.posts[i].likes
+  }
+  return suma;
+  }
+  */
+ var suma = 0;
   for (var post in usuario.posts){
     suma = suma + usuario.posts[post].likes;
   }
     return suma;
-  }
- 
+  } 
 
+
+ 
 function agregarMetodoCalculoDescuento (producto) {
   // Agregar un método (función) al objeto "producto" llamado "calcularPrecioDescuento"
   // Este método debe multiplicar el "precio" del "producto" ("producto.precio" o "producto[precio]") y "porcentajeDeDescuento" para obtener el descuento
@@ -187,12 +217,29 @@ function agregarMetodoCalculoDescuento (producto) {
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
 
- producto.calcularPrecioDescuento = function () {
+ /* producto.calcularPrecioDescuento = function () {
   return producto.precio - (producto.precio*producto.porcentajeDeDescuento);
  }
  return producto; 
 
+} */
+
+producto.calcularPrecioDescuento = function () {
+  return this.precio - (this.precio * this.porcentajeDeDescuento)
+} 
+return producto;
 }
+
+/* producto.calcularPrecioDescuento = function () {
+  var descuento = producto.precio * producto.porcentajeDeDescuento;
+  var nuevoPrecio = producto.precio - descuento;
+  return nuevoPrecio;
+}
+return producto;
+} */
+
+
+
 
 // No modificar nada debajo de esta línea
 // --------------------------------
