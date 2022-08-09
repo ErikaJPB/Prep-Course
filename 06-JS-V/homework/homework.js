@@ -50,7 +50,7 @@ function agregarStringInvertida() {
 String.prototype.reverse = function() {
   var invertirString = '';
   for (var i = this.length -1; i >= 0; i--) {
-  invertirString += this[i];
+  invertirString = invertirString + this[i];
   }
   return invertirString;
 }
