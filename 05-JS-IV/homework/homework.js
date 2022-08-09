@@ -1,6 +1,5 @@
 // No cambies los nombres de las funciones.
 
-const { EMPTY_COMMANDS } = require("simple-git/src/lib/tasks/task");
 
 function crearGato (nombre, edad) {
   // Crear un nuevo objeto con la propiedad "nombre" y el valor definido como el argumento "nombre".
@@ -224,19 +223,19 @@ function agregarMetodoCalculoDescuento (producto) {
 
 } */
 
-producto.calcularPrecioDescuento = function () {
+/* producto.calcularPrecioDescuento = function () {
   return this.precio - (this.precio * this.porcentajeDeDescuento)
 } 
 return producto;
-}
+} */
 
-/* producto.calcularPrecioDescuento = function () {
+producto.calcularPrecioDescuento = function () {
   var descuento = producto.precio * producto.porcentajeDeDescuento;
   var nuevoPrecio = producto.precio - descuento;
   return nuevoPrecio;
 }
 return producto;
-} */
+} 
 
 
 
