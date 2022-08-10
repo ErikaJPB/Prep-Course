@@ -5,7 +5,11 @@ function mayuscula(nombre) {
   //ej: Recibe "mario" ----> Devuelve "Mario"
   //Tu código:
 
-return nombre[0].toUpperCase()+nombre.slice(1);
+
+/* return nombre.charAt()[0].toUpperCase() + nombre.slice(1);
+}  */
+
+return nombre[0].toUpperCase() + nombre.slice(1);
 }
 
 
@@ -37,38 +41,78 @@ function sumarArray(numeros, cb) {
 }
 
  */
-var suma = numeros.reduce(function (acc, curr) {
+/* var suma = numeros.reduce(function (acc, curr) {
   return acc + curr;
 }, 0);
 cb (suma);
 }
+ */
+
+/* var resultado = numeros.reduce((valorInicial, valorActual) => {
+  return valorInicial + valorActual;
+})
+
+cb (resultado);
+
+}
+ */
+var sumar = 0; 
+numeros.forEach(elementoDelArreglo => {
+  sumar = sumar + elementoDelArreglo;
+});
+
+cb(sumar)
+}
+
+
 
 function forEach(array, cb) {
   // Itera sobre la matriz "array" y pasa los valores al callback uno por uno
   // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
   //Tu código:
-  array.forEach(function(elemento, indice)
+
+array.forEach(function(elemento)
   { cb(elemento);
   })
 }
+ 
+ 
+/* for (var i = 0; i < array.length; i++) {
+  cb(array[i])
+}
+
+} */
+
+
 
 function map(array, cb) {
   // Crea un nuevo array
   // Itera sobre cada valor en "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
   // El nuevo array debe tener la misma longitud que el array del argumento
   //Tu código:
+/* var nuevoArray = [];
+for (var i = 0; i < array.length; i++){
+  nuevoArray.push(cb(array[i])) 
+}
+return nuevoArray;
+}
+ */
+
   var nuevoArray = array.map(function(elemento) {
     return cb(elemento)
   });
   return nuevoArray;
-}
+} 
+
+
+
 
 function filter(array) {
   //Filtrar todos los elementos del array que comiencen con la letra "a".
   //Devolver un nuevo array con los elementos que cumplen la condición
   //Tu código:
   
-   var nuevoArray = [];
+ /*   var nuevoArray = [];
   for (var i = 0; i < array.length; i++) {
     if (array[i][0] === 'a') {
       nuevoArray.push(array[i])
@@ -76,8 +120,15 @@ function filter(array) {
   }
   return nuevoArray;
 } 
+ */
 
-
+var nuevoArray = array.filter(function(palabra){
+  if (palabra[0] === 'a') {
+    return palabra;
+  }
+})
+return nuevoArray;
+}
 
 // No modificar nada debajo de esta línea
 // --------------------------------
